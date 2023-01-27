@@ -38,7 +38,7 @@ void Lexer::SkipSpace(){
     }
 }
 
-//接下来要实现拆分词语和获得词法类型
+//接下来要实现拆分词语和获得词法类型 只要持续调用NextToken即可实现完整解析
 Token Lexer::NextToken(){
     if(fileStream.eof()){
         return Token::End;
@@ -126,10 +126,10 @@ Token Lexer::SplitId(){
     int index = IsKeyword(id.c_str(),KeyWords);
 
     if(index < 0){
-        printf("搜索到变量ID：%s \n",id.c_str());
+        printf("%s \n",id.c_str());
         return Token::Id;
     }else{
-        printf("搜索到关键字：%s \n",id.c_str());
+        printf("%s \n",id.c_str());
         return Token::Keyword;
     }
 }
