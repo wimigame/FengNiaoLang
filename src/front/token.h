@@ -8,8 +8,10 @@ enum class Token{
     Id = 2,
     Num = 3,
     String = 4,
-    Keyword = 5,
-    Operator = 6
+    Char = 5,
+    Keyword = 6,
+    Operator = 7,
+    Other = 8
 };
 
 }

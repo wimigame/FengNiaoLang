@@ -12,10 +12,16 @@ class Lexer {
     Lexer(const std::string filename, const std::string flag);
     Token NextToken();
     private:
+    bool IsOperator(char c);
     void NextChar();
     void SkipSpace();
     bool IsEnd();
     Token SplitId();
+    Token SplitString();
+    Token SplitChar();
+    Token SplitNum();
+    Token SplitOperator();
+    Token SplitEnd();
 
     private:
     std::ifstream fileStream;
